@@ -1,7 +1,12 @@
 # eslint-plugin-raml
+[![Build Status](https://travis-ci.org/galk-in/eslint-plugin-raml.svg?branch=master)](https://travis-ci.org/galk-in/eslint-plugin-raml)
+[![Dependency Status](https://david-dm.org/galk-in/eslint-plugin-raml.svg)](https://david-dm.org/galk-in/eslint-plugin-raml)
+[![devDependency Status](https://david-dm.org/galk-in/eslint-plugin-raml/dev-status.svg)](https://david-dm.org/galk-in/eslint-plugin-raml#info=devDependencies)
+[![Coverage Status](https://coveralls.io/repos/github/galk-in/eslint-plugin-raml/badge.svg?branch=master)](https://coveralls.io/github/galk-in/eslint-plugin-raml?branch=master)
 
 Eslint rules for RAML
 
+[![NPM](https://nodei.co/npm/eslint-plugin-raml.png?downloads=true&stars=true)](https://nodei.co/npm/eslint-plugin-raml/)
 ## Installation
 
 You'll first need to install [ESLint](http://eslint.org):

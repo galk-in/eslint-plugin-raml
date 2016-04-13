@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+  - stable
+  - v5
+  - v4
+  - 0.12
+  - 0.11
+  - 0.1
+  - iojs
+after_success:
+  - npm run coveralls
+deploy:
+  provider: npm
+  email: nikita@galk.in
+  api_key:
+    secure: s0EMuLq8vJslRHUSWgF0ax7IibTqyzxuUcMxlsM+meBSFJu4O9q5JU0t5fALBG+Kl7zFBN8mih4/T77KFuu+/CBoy+rmCN7hv3EuRXt+DOu7ooAf1Vx89xcfJaPTK3xvlDj9syAVJuN6qsAQlYwaZYoPK4Vd5TCiVB7Pqs1w6Dd5VkT3YBEfz7duY/V3TWVZ9BqSF6MVc8I1CoGp7B4h4GhklFmuLeaTLLqVoSslPQ/vkLOwJq37qmXmVleAKQj0aFWIwoaPh+hDWRFRej3R4v+jIcr/6c54cDLeeZQT/d3POBSgfqUDNdJkCBtK/0BhTMEvuqUECYmhP6aT+GIiVe1DAz5dz4eZXjuXfhcVA27xj6uZjGjWcpF885Xxmphc2GWpgYlpiVm3b7IYoEk/ZJLBIOWMOG4dQh9B7thLB8nb+5Khzx6Mp99IlqBAM2cRtq/W2kxhFwU5y8L3B3fzdvBuqZ+PJ9HrBlkmvG4uYqRnXf2L1Xur5+dBBUb34nG7ghNfg99lMQMCr0reF/AJp+SnH6rnB+Owg5VY+XtmaysmyLaQ7Iw8+A/JmqPMl/yPE6Q/2OSxE44G6hhin1BXexF/6PXc7Z+LRYQwYe9QEuVkoVMUzL29N8pY9R5Yig7A+q+yrHjZz9zP/9EgBO3mi9770l7boJuz3IWLaOL13jg=
+  on:
+    tags: true
+    repo: galk-in/eslint-plugin-raml
