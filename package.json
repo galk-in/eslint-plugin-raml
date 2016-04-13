@@ -1,0 +1,53 @@
+{
+  "name": "eslint-plugin-raml",
+  "version": "0.0.1",
+  "description": "Eslint rules for RAML",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin",
+    "RAML"
+  ],
+  "files": [
+    "lib"
+  ],
+  "author": "Nikita Galkin",
+  "main": "lib/index.js",
+  "scripts": {
+    "cs": "eslint lib/**/**/*.js test/**/**/*.js",
+    "cs-fix": "eslint lib/** test/** --fix",
+    "test": "npm run cs && npm run test-no-cs",
+    "test-no-cs": "mocha",
+    "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+  },
+  "dependencies": {
+    "requireindex": "~1.1.0",
+    "jshint": "^2.8.0"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "mocha": "^2.3.4",
+    "coveralls": "^2.11.8",
+    "eslint": "^2.7.0",
+    "eslint-config-xo-space": "^0.11.0",
+    "istanbul": "^0.4.2"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "eslintConfig": {
+    "extends": "xo-space",
+    "env": {
+      "mocha": true
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/galk-in/eslint-plugin-raml.git"
+  },
+  "bugs": {
+    "url": "https://github.com/galk-in/eslint-plugin-ralm/issues"
+  },
+  "url": "https://github.com/galk-in/eslint-plugin-ralm",
+  "license": "MIT"
+}
