@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-raml",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Eslint rules for RAML",
   "keywords": [
     "eslint",
@@ -21,6 +21,7 @@
     "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "dependencies": {
+    "deasync": "^0.1.4",
     "jshint": "^2.8.0",
     "raml-parser": "^0.8.16"
   },
