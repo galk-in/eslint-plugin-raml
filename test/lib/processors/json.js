@@ -1,3 +1,5 @@
+'use strict';
+
 var plugin = require('../../../lib/index.js');
 var assert = require('chai').assert;
 
