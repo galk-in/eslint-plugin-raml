@@ -1,0 +1,12 @@
+#%RAML 0.8
+---
+title: Test
+/customers:
+  get:
+    description: Looks for customers using the elements provided as query parameters.  This will return a list of customers, their current address and contact details
+    responses:
+      200:
+        description: A successful search that has returned at least one person.  The data will always be returned in an array.
+        body:
+          application/json:
+            schema:  !include schemas/customer.json

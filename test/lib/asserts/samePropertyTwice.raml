@@ -1,0 +1,12 @@
+#%RAML 0.8
+---
+title: Test
+securitySchemes:
+ - scheme:
+     description: This is some text
+     type: OAuth 2.0
+     settings:
+       authorizationUri: https://www.dropbox.com/1/oauth2/authorize
+       accessTokenUri: https://api.dropbox.com/1/oauth2/token
+       authorizationGrants: [ code token ]
+       authorizationUri: https://www.dropbox.com/1/oauth2/authorize

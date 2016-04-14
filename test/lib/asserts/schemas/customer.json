@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "customer",
+  "type": "object",
+  "properties": {
+    "firstName": {
+      "type": "string"
+    },
+    "surname": {
+      "type": "string"
+    }
+  }
+}
