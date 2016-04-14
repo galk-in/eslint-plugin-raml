@@ -4,7 +4,7 @@
 [![devDependency Status](https://david-dm.org/galk-in/eslint-plugin-raml/dev-status.svg)](https://david-dm.org/galk-in/eslint-plugin-raml#info=devDependencies)
 [![Coverage Status](https://coveralls.io/repos/github/galk-in/eslint-plugin-raml/badge.svg?branch=master)](https://coveralls.io/github/galk-in/eslint-plugin-raml?branch=master)
 
-Eslint rules for RAML
+Check your json files (schemas/examples) and raml for errors. 
 
 [![NPM](https://nodei.co/npm/eslint-plugin-raml.png?downloads=true&stars=true)](https://nodei.co/npm/eslint-plugin-raml/)
 ## Installation
@@ -34,18 +34,3 @@ Add `raml` to the plugins section of your `.eslintrc` configuration file. You ca
     ]
 }
 ```
-
-
-Then configure the rules you want to use under the rules section.
-
-```json
-{
-    "rules": {
-        "raml/rule-name": 2
-    }
-}
-```
-
-## Supported Rules
-
-TBD
