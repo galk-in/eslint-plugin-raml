@@ -40,7 +40,8 @@ describe('raml', function () {
         assert.isArray(results, 'should return an array');
         assert.lengthOf(results, 1, 'should return one error');
         var error = results[0];
-        assert.strictEqual(error.line, 12, 'should point to twelve line');
+        assert.strictEqual(error.ruleId, 'bad-raml');
+        assert.strictEqual(error.line, 12, 'should point to 12 line');
         assert.strictEqual(error.column, 22, 'should point to 21 character');
       });
 
@@ -53,8 +54,33 @@ describe('raml', function () {
         assert.isArray(results, 'should return an array');
         assert.lengthOf(results, 1, 'should return one error');
         var error = results[0];
-        assert.strictEqual(error.line, 12, 'should point to twelve line');
-        assert.strictEqual(error.column, 8, 'should point to seven character');
+        assert.strictEqual(error.ruleId, 'bad-raml');
+        assert.strictEqual(error.line, 12, 'should point to 12 line');
+        assert.strictEqual(error.column, 8, 'should point to 8 character');
+      });
+    });
+    describe('checking schemas', function () {
+      it('should return no errors for valid schemas', function () {
+        var fileName = makeRAMLFilePath('valid.raml');
+        var text = fs.readFileSync(fileName);
+        preprocess(text, fileName);
+        var results = postprocess([], fileName);
+
+        assert.isArray(results, 'should return an array');
+        assert.lengthOf(results, 0, 'valid.raml shouldnt have any errors');
+      });
+
+      it('should return an errors for example not valid with schema', function () {
+        var fileName = makeRAMLFilePath('invalidExample.raml');
+        var text = fs.readFileSync(fileName);
+        preprocess(text, fileName);
+        var results = postprocess([], fileName);
+
+        assert.isArray(results, 'should return an array');
+        assert.lengthOf(results, 1, 'should return one error');
+        var error = results[0];
+        assert.strictEqual(error.ruleId, 'example-not-correspond-schema');
+        assert.strictEqual(error.line, 10, 'should point to 10 line');
       });
     });
   });
