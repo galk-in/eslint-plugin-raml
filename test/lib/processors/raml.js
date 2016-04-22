@@ -80,7 +80,7 @@ describe('raml', function () {
         assert.lengthOf(results, 1, 'should return one error');
         var error = results[0];
         assert.strictEqual(error.ruleId, 'example-not-correspond-schema');
-        assert.strictEqual(error.line, 10, 'should point to 10 line');
+        assert.strictEqual(error.line, 14, 'should point to 14 line');
       });
     });
   });
