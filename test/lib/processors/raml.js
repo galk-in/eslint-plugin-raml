@@ -41,8 +41,8 @@ describe('raml', function () {
       assert.isArray(results, 'should return an array');
       assert.lengthOf(results, 1, 'should return one error');
       var error = results[0];
-      assert.strictEqual(error.line, 11, 'should point to eleven line');
-      assert.strictEqual(error.column, 21, 'should point to 21 character');
+      assert.strictEqual(error.line, 12, 'should point to twelve line');
+      assert.strictEqual(error.column, 22, 'should point to 21 character');
     });
 
     it('should return an error for the authorizationUri Twice', function () {
@@ -54,8 +54,8 @@ describe('raml', function () {
       assert.isArray(results, 'should return an array');
       assert.lengthOf(results, 1, 'should return one error');
       var error = results[0];
-      assert.strictEqual(error.line, 11, 'should point to eleven line');
-      assert.strictEqual(error.column, 7, 'should point to seven character');
+      assert.strictEqual(error.line, 12, 'should point to twelve line');
+      assert.strictEqual(error.column, 8, 'should point to seven character');
     });
   });
 });
