@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-raml",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Eslint rules for RAML",
   "keywords": [
     "eslint",
@@ -23,7 +23,8 @@
   "dependencies": {
     "deasync": "^0.1.4",
     "jshint": "^2.8.0",
-    "raml-parser": "^0.8.16"
+    "raml-parser": "^0.8.16",
+    "tv4": "^1.2.7"
   },
   "devDependencies": {
     "chai": "^3.4.1",
