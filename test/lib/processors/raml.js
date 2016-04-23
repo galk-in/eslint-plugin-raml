@@ -59,8 +59,8 @@ describe('raml', function () {
         assert.strictEqual(error.column, 8, 'should point to 8 character');
       });
     });
-    describe('checking schemas', function () {
-      it('should return no errors for valid schemas', function () {
+    describe('checking examples', function () {
+      it('should return no errors for valid', function () {
         var fileName = makeRAMLFilePath('valid.raml');
         var text = fs.readFileSync(fileName);
         preprocess(text, fileName);
@@ -70,7 +70,7 @@ describe('raml', function () {
         assert.lengthOf(results, 0, 'valid.raml shouldnt have any errors');
       });
 
-      it('should return an errors for example not valid with schema', function () {
+      it('should return an errors for not valid', function () {
         var fileName = makeRAMLFilePath('invalidExample.raml');
         var text = fs.readFileSync(fileName);
         preprocess(text, fileName);
