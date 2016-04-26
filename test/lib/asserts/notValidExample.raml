@@ -7,10 +7,6 @@ title: Test
     responses:
       200:
         description: A successful search that has returned at least one person.  The data will always be returned in an array.
-#start fake body:
-#body:
-#        body:
-#      end  body: asdfdsf
         body:
           application/json:
             schema:  !include schemas/customer.json

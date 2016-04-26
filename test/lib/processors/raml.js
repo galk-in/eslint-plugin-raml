@@ -36,13 +36,14 @@ describe('raml', function () {
         var text = fs.readFileSync(fileName);
         preprocess(text, fileName);
         var results = postprocess([], fileName);
-
         assert.isArray(results, 'should return an array');
-        assert.lengthOf(results, 1, 'should return one error');
-        var error = results[0];
-        assert.strictEqual(error.ruleId, 'bad-raml');
-        assert.strictEqual(error.line, 12, 'should point to 12 line');
-        assert.strictEqual(error.column, 22, 'should point to 21 character');
+        assert.lengthOf(results, 2, 'should return 2 errors');
+        assert.strictEqual(results[0].ruleId, 'bad-raml');
+        assert.strictEqual(results[0].line, 12, 'should point to 12 line');
+        assert.strictEqual(results[0].column, 13, 'should point to 22 character');
+        assert.strictEqual(results[1].ruleId, 'bad-raml');
+        assert.strictEqual(results[1].line, 12, 'should point to 12 line');
+        assert.strictEqual(results[1].column, 13, 'should point to 22 character');
       });
 
       it('should return an error for the authorizationUri Twice', function () {
@@ -52,35 +53,52 @@ describe('raml', function () {
         var results = postprocess([], fileName);
 
         assert.isArray(results, 'should return an array');
+        assert.lengthOf(results, 2, 'should return 2 errors');
+        assert.strictEqual(results[0].ruleId, 'bad-raml');
+        assert.strictEqual(results[0].line, 9, 'should point to 9 line');
+        assert.strictEqual(results[0].column, 8, 'should point to 8 character');
+        assert.strictEqual(results[1].ruleId, 'bad-raml');
+        assert.strictEqual(results[1].line, 12, 'should point to 12 line');
+        assert.strictEqual(results[1].column, 8, 'should point to 8 character');
+      });
+    });
+
+    describe('examples and schemas checking', function () {
+      it('should return an error for example with mistake', function () {
+        var fileName = makeRAMLFilePath('exampleWithError.raml');
+        var text = fs.readFileSync(fileName);
+        preprocess(text, fileName);
+        var results = postprocess([], fileName);
+        assert.isArray(results, 'should return an array');
         assert.lengthOf(results, 1, 'should return one error');
         var error = results[0];
         assert.strictEqual(error.ruleId, 'bad-raml');
-        assert.strictEqual(error.line, 12, 'should point to 12 line');
-        assert.strictEqual(error.column, 8, 'should point to 8 character');
+        assert.strictEqual(error.line, 13, 'should point to 13 line');
       });
-    });
-    describe('checking examples', function () {
-      it('should return no errors for valid', function () {
-        var fileName = makeRAMLFilePath('valid.raml');
+
+      it('should return an error for schema with error', function () {
+        var fileName = makeRAMLFilePath('schemaWithError.raml');
         var text = fs.readFileSync(fileName);
         preprocess(text, fileName);
         var results = postprocess([], fileName);
-
         assert.isArray(results, 'should return an array');
-        assert.lengthOf(results, 0, 'valid.raml shouldnt have any errors');
+        assert.lengthOf(results, 2, 'should return one error');
+        assert.strictEqual(results[0].ruleId, 'bad-raml');
+        assert.strictEqual(results[0].line, 12, 'should point to 12 line');
+        assert.strictEqual(results[1].ruleId, 'bad-raml');
+        assert.strictEqual(results[1].line, 12, 'should point to 12 line');
       });
 
-      it('should return an errors for not valid', function () {
-        var fileName = makeRAMLFilePath('invalidExample.raml');
+      it('should return an errors for not valid example', function () {
+        var fileName = makeRAMLFilePath('notValidExample.raml');
         var text = fs.readFileSync(fileName);
         preprocess(text, fileName);
         var results = postprocess([], fileName);
-
         assert.isArray(results, 'should return an array');
         assert.lengthOf(results, 1, 'should return one error');
         var error = results[0];
-        assert.strictEqual(error.ruleId, 'example-not-correspond-schema');
-        assert.strictEqual(error.line, 14, 'should point to 14 line');
+        assert.strictEqual(error.ruleId, 'bad-raml');
+        assert.strictEqual(error.line, 13, 'should point to 13 line');
       });
     });
   });
