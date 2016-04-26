@@ -33,7 +33,7 @@
     "istanbul": "^0.4.2"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=0.11.0"
   },
   "eslintConfig": {
     "extends": "xo-space",
