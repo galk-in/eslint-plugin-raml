@@ -28,7 +28,7 @@
     "mocha": "^2.5.1",
     "coveralls": "^2.11.8",
     "eslint": "^2.9.0",
-    "eslint-config-xo-space": "^0.13.0",
+    "eslint-config-xo-space": "^0.14.0",
     "istanbul": "^0.4.2"
   },
   "engines": {
