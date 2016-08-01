@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "chai": "^3.4.1",
-    "mocha": "^2.5.1",
+    "mocha": "^3.0.0",
     "coveralls": "^2.11.11",
     "eslint": "^3.1.1",
     "eslint-config-xo-space": "^0.14.0",
