@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "raml-1-parser": "1.1.10",
-    "raml-json-validation": "0.0.10"
+    "raml-json-validation": "0.0.11"
   },
   "devDependencies": {
     "chai": "^3.5.0",
