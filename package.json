@@ -3,22 +3,30 @@
   "version": "0.2.7",
   "description": "Eslint rules for RAML",
   "keywords": [
+    "RAML",
     "eslint",
-    "eslintplugin",
     "eslint-plugin",
-    "RAML"
+    "eslintplugin"
   ],
+  "bugs": {
+    "url": "https://github.com/galk-in/eslint-plugin-raml/issues"
+  },
+  "license": "MIT",
+  "author": "Nikita Galkin",
   "files": [
     "lib"
   ],
-  "author": "Nikita Galkin",
   "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/galk-in/eslint-plugin-raml.git"
+  },
   "scripts": {
-    "cs": "eslint lib/**/**/*.js test/**/**/*.js",
-    "cs-fix": "eslint lib/** test/** --fix",
-    "test": "npm run cs && npm run test-no-cs",
-    "test-no-cs": "mocha",
-    "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "cs": "eslint lib/. test/. --ext .js",
+    "cs-fix": "eslint lib/. test/. --fix --ext .js",
+    "test": "npm run cs && nyc npm run test-no-cs",
+    "test-no-cs": "mocha"
   },
   "dependencies": {
     "raml-1-parser": "1.1.14",
@@ -27,27 +35,15 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "coveralls": "^2.11.14",
-    "eslint": "^3.8.0",
-    "eslint-config-xo-space": "^0.15.0",
-    "istanbul": "^0.4.5",
-    "mocha": "^3.1.2"
+    "eslint": "^3.13.1",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-standard": "^2.0.1",
+    "mocha": "^3.1.2",
+    "nyc": "^10.1.2"
   },
   "engines": {
     "node": ">=4"
   },
-  "eslintConfig": {
-    "extends": "xo-space",
-    "env": {
-      "mocha": true
-    }
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/galk-in/eslint-plugin-raml.git"
-  },
-  "bugs": {
-    "url": "https://github.com/galk-in/eslint-plugin-raml/issues"
-  },
-  "url": "https://github.com/galk-in/eslint-plugin-raml",
-  "license": "MIT"
+  "url": "https://github.com/galk-in/eslint-plugin-raml"
 }
