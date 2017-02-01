@@ -1,0 +1,12 @@
+{
+    "properties": {
+        "issue": {
+            "type": "string",
+            "description": "I certainly not boolean"
+        }
+    },
+    "type": "object",
+    "description": "I would not be validated due to !include in raml :(",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "required": ["issue"]
+}

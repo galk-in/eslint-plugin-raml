@@ -100,6 +100,18 @@ describe('raml', function () {
         assert.strictEqual(error.ruleId, 'bad-raml')
         assert.strictEqual(error.line, 13, 'should point to 13 line')
       })
+
+      it.skip('should return no errors for api_with_schemas_include.raml', function () {
+        var fileName = makeRAMLFilePath('api_with_schemas_include.raml')
+        var text = fs.readFileSync(fileName)
+        preprocess(text, fileName)
+        var results = postprocess([], fileName)
+        assert.isArray(results, 'should return an array')
+        assert.lengthOf(results, 1, 'should return one error')
+        var error = results[0]
+        assert.strictEqual(error.ruleId, 'bad-raml')
+        assert.strictEqual(error.line, 13, 'should point to 13 line')
+      })
     })
   })
 })

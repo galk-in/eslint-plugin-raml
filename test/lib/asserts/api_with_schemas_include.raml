@@ -1,0 +1,16 @@
+#%RAML 0.8
+title: Schema validation is always OK for this one
+version: v1
+
+
+/issue:
+    post:
+        body:
+            application/json:
+                schema: issue_schema
+                example: !include examples/issue_example.json
+        responses:
+            200:
+                description: Success
+
+schemas: !include schemas/schemas.raml
