@@ -101,7 +101,7 @@ describe('raml', function () {
         assert.strictEqual(error.line, 13, 'should point to 13 line')
       })
 
-      it.skip('should return no errors for api_with_schemas_include.raml', function () {
+      it.only('should return no errors for api_with_schemas_include.raml', function () {
         var fileName = makeRAMLFilePath('api_with_schemas_include.raml')
         var text = fs.readFileSync(fileName)
         preprocess(text, fileName)
